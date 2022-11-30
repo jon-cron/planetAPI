@@ -1,3 +1,4 @@
+import { Auth0Provider } from "@bcwdev/auth0provider";
 import { galaxiesService } from "../services/GalaxiesService.js";
 import BaseController from "../utils/BaseController.js";
 
@@ -8,6 +9,7 @@ export class GalaxiesController extends BaseController{
     super('api/galaxies')
     this.router
     .get('', this.getAll)
+    // .use(Auth0Provider.getAuthorizedUserInfo)
     .post('', this.create)
   }
  async getAll(req, res, next){
